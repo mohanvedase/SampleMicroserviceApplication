@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: ms1
-        image: krishna019/ms1:tag1
+        image: krishna019/ms1:v1
         ports:
         - containerPort: 3000
         resources:
@@ -55,39 +55,6 @@ spec:
           limits:
             memory: "256Mi"
             cpu: "500m"
-
-
-
-
----
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: microservices3
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: ms3
-  template:
-    metadata:
-      labels:
-        app: ms3
-    spec:
-      containers:
-      - name: ms2
-        image: krishna019/ms3:v1
-        ports:
-        - containerPort: 3002
-        resources:
-          requests:
-            memory: "128Mi"
-            cpu: "250m"
-          limits:
-            memory: "256Mi"
-            cpu: "500m"
-
-
 
 ---
 apiVersion: apps/v1
