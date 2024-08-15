@@ -1,0 +1,146 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms1
+  template:
+    metadata:
+      labels:
+        app: ms1
+    spec:
+      containers:
+      - name: ms1
+        image: krishna019/ms1:tag1
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+
+
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices2
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms2
+  template:
+    metadata:
+      labels:
+        app: ms2
+    spec:
+      containers:
+      - name: ms2
+        image: krishna019/ms2:v1
+        ports:
+        - containerPort: 3001
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+
+
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms3
+  template:
+    metadata:
+      labels:
+        app: ms3
+    spec:
+      containers:
+      - name: ms2
+        image: krishna019/ms3:v1
+        ports:
+        - containerPort: 3002
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+
+
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices3
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms3
+  template:
+    metadata:
+      labels:
+        app: ms3
+    spec:
+      containers:
+      - name: ms3
+        image: krishna019/ms3:v1
+        ports:
+        - containerPort: 3003
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microservices4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms4
+  template:
+    metadata:
+      labels:
+        app: ms4
+    spec:
+      containers:
+      - name: ms4
+        image: krishna019/ms4:v1
+        ports:
+        - containerPort: 3003
+        resources: # Correct indentation starts here
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
