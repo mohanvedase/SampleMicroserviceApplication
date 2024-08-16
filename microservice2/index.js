@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 
 app.get('/user', (req,res)=>{
-    res.send({'msg':'Microservice 2: User Said Hi'})
+    res.send({'msg':'Microservice 2: Users Said Hi'})
 })
 
 app.listen(3001, ()=>{

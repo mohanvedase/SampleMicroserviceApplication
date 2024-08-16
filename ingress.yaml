@@ -15,25 +15,25 @@ spec:
           service:
             name: microservices1-service
             port:
-              number: 3000
+              number: 80
       - path: /ms2
         pathType: Prefix
         backend:
           service:
             name: microservices2-service
             port:
-              number: 3001
+              number: 80
       - path: /ms3
         pathType: Prefix
         backend:
           service:
             name: microservices3-service
             port:
-              number: 3002
+              number: 80
       - path: /ms4
         pathType: Prefix
         backend:
           service:
             name: microservices4-service
             port:
-              number: 3003
+              number: 80
